@@ -18,7 +18,7 @@ puis authentifier-vous.
 
 Pour intialiser le repository, sur le site, dans le volet de gauche listant les repositories actifs, cliquez sur "+" à droite de "My Repositories". Cherchez votre repository, activez-le à l'aide du bouton "on-off", puis cliquez sur la roue crantée pour accéder aux options. 
 
-`Si votre repository n'apparait, pas cliquer sur 'Sync account'`
+`Si votre repository n'apparait pas, cliquer sur 'Sync account'`
 
 Dans la page des options, activez l'option `Build only if .travis.yml is present`
 
@@ -30,7 +30,7 @@ D'abord, il faut créer le fichier `.travis.yml` qui permet de configurer le cyc
 Celui-ci devra contenir au minimum :
 * Le langage qui doit être testé
 * Pour ce langage, les versions/moteurs à tester
-* Par anticipation, spécifier la commande qui va jouer les tests unitaire
+* Par anticipation, spécifiez la commande qui va jouer les tests unitaires
 
 ##### Fichier `travis`:
 
@@ -52,7 +52,7 @@ Ayant spécifié un fichier PHP contenant nos tests, il va falloir également le
 
 ##### Fichier `your_php_test_file.php`
 
-Voici le code fournis par la documentation de PHPUnit
+Voici le code fourni par la documentation de PHPUnit
 
 ```php
 <?php
@@ -76,6 +76,10 @@ class StackTest extends PHPUnit_Framework_TestCase
 
 Il ne restera plus qu'à faire votre commit et votre push vers GitHub.
 Dès lors, sur Travis CI, le fichier `your_php_test_file.php` sera testé sur l'ensemble des versions spécifiées dans le fichier `.travis.yml` : 5.5, 5.6, 7.0, 7.1 et hhvm
+
+Notez qu'en l'état, chaque commit vers le repository GitHub, un building sera lancé.
+
+Si vous ne souhaitez pas jouer l'ensemble des tests ainsi que la construction, ajouter à votre commit message, la valeur `[skip ci]` ou `[ci skip]`. Les deux valeurs sont admise. 
 
 Si tout se déroule comme prévu vous devez obtenir un résultat équivalent : https://travis-ci.org/neooblaster/TravicCI-PHPUnit/builds/235195249
 
