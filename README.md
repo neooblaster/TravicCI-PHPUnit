@@ -56,9 +56,7 @@ Voici le code fournis par la documentation de PHPUnit
 
 ```php
 <?php
-use PHPUnit\Framework\TestCase;
-
-class StackTest extends TestCase
+class StackTest extends PHPUnit_Framework_TestCase
 {
     public function testPushAndPop()
     {
