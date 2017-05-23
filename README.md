@@ -77,6 +77,8 @@ class StackTest extends PHPUnit_Framework_TestCase
 Il ne restera plus qu'à faire votre commit et votre push vers GitHub.
 Dès lors, sur Travis CI, le fichier `your_php_test_file.php` sera testé sur l'ensemble des versions spécifiées dans le fichier `.travis.yml` : 5.5, 5.6, 7.0, 7.1 et hhvm
 
+Si tout se déroule comme prévu vous devez obtenir un résultat équivalent : https://travis-ci.org/neooblaster/TravicCI-PHPUnit/builds/235195249
+
 
 
 
